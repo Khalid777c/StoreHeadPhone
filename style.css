@@ -1,0 +1,565 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Parkinsans:wght@300..800&family=Poppins:wght@300;400;700;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Parkinsans:wght@300..800&family=Poppins:ital,wght@0,300;0,400;0,700;0,800;1,200&display=swap');
+
+:root{
+    --main-color:#00dcff;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Open Sans", sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*000000000000000000000000000000000000000000000*/
+.nov{
+    height: 80px;
+    background-color: #f0ecec;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 5rem;
+    position: relative;
+}
+
+.navbar ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.navbar ul li a{
+    color: #000;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active{
+    color: #0c67de;
+}
+
+.humburger{
+    display: none;
+}
+
+@media(max-width:900px){
+    .nov{
+        padding: 0 3rem;
+        position: relative;
+    }
+    .humburger{
+        display: block;
+        width: 45px;
+        height: 45px;
+        font-size: 25px;
+        position: relative;
+    }
+    .humburger i{
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        cursor: pointer;
+        width: max-content;
+        height: max-content;
+        opacity: 0;
+    }
+    .humburger i.active{
+        opacity: 1;
+        transform: rotate(180deg);
+    }
+    .navbar{
+        position: absolute;
+        background-color: #f0ecec;
+        top: 80px;
+        width: 100%;
+        left: 0;
+        padding: 0 3rem;
+        opacity: 0;
+        transition: 0.3s;
+    }
+    .active{
+        opacity: 1;
+      }
+      .navbar ul{
+        display: block;
+      }
+      .navbar ul li{
+        margin: 20px 0;
+        border-bottom: 1px solid #a4a4a4;
+        padding-bottom: 10px;
+      }
+      .navbar ul li:last-child{
+        border-bottom: none;
+      }
+      .navbar ul li a{
+        margin: 0;
+        transition: 0.3s;
+        font-size: 18px;
+    }
+    .navbar ul li a:hover{
+        margin-left: 20px;
+    }
+}
+/*000000000000000000000000000000000000000000000*/
+
+/* Start Settings box */
+.settings-box{
+    position: absolute;
+    left: -200px;
+    top: 0;
+    background-color: #fff;
+    width: 200px;
+    z-index: 1000;
+    min-height: 100vh;
+    transition: .6s;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.open{
+    left: 0;
+}
+
+.settings-box .icon-settings{
+    position: absolute;
+    right:-30px;
+    top: 100px;
+    background-color: #fff;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.settings-box .icon-settings .fa-gear{
+    width: 30px;
+    padding: 8px 0;
+}
+
+.settings-box .settings-container{}
+/* end Settings box */
+
+.landing-page{
+    background-image: url(iamages/1.jpg);
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+}
+
+.overlay{
+    background-color: rgba(0 ,0 ,0,.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.header-landing{
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 10px;
+    color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    background-color: #fff;
+}
+
+.landing-page .menu{
+    width: 150px;
+    height: 200px;
+    background-color: #fff;
+    z-index: 1;
+    transition: 0.3s;
+    position: absolute;
+    bottom: -210px;
+    right: 5px;
+    border-radius: 5px;
+    display: none;
+}
+
+.show{
+   display: block;
+}
+
+.landing-page .menu  li:not(:last-child) a {
+    border-bottom: 1px solid #ddd;
+}
+.landing-page .menu li{
+    list-style: none;
+}
+
+.landing-page .menu li a{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #222;
+    transition: 0.3s;
+    font-size: 20px;
+    font-weight: 500;
+}
+.landing-page .menu li a:hover{
+    padding-left: 20px;
+    color: #0c67debf;
+}
+
+.landing-page .menu::before{
+    content:"";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+    position: absolute;
+    right: 5px;
+    top: -20px;
+}
+
+.header-landing ul{
+    list-style: none;
+}
+
+.header-landing ul li {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.header-landing ul li a{
+    color: #000000;
+    text-decoration: none;
+    transition: .3s;
+    padding: 10px;
+}
+
+.header-landing ul li a:hover,
+.header-landing ul li a.active{
+    color:#0c67debf;
+}
+
+.landing-page .logo{
+    font-family: "Parkinsans", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.landing-page .icon{
+    margin-right: 0px;
+    cursor: pointer;
+}
+
+.landing-page .icon a{
+    color: #000000;
+    margin-right: 15px;
+}
+
+.header-landing .logo .dash{
+    color: #fff;
+}
+
+.text-landing{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    z-index: 2;
+    margin: auto;
+    max-width: 1100px;
+}
+
+.text-landing h1{
+    color: #ffffff;
+    font-size: 34px;
+    margin: 0 0 12px;
+}
+
+.text-landing p{
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #fff;
+}
+
+/*strat Product*/
+
+#product{
+    max-width: 1100px;
+    margin: auto;
+    padding: 6rem 0;
+    background-color: #3280e694;
+}
+
+#product h1{
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Parkinsans", sans-serif;
+    margin-top: -30px;
+    color: #fff;
+}
+
+#product .product-content .card img{
+    width: 200px;
+    filter: drop-shadow(3px 3px 10px);
+}
+
+#product .product-content .card:hover{
+    transform: scale(1.1);
+}
+
+#product .product-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    align-items: center;
+}
+#product .product-content .card{
+    margin: 3rem auto;
+    transition: 0.6s;
+}
+
+#product .product-content .card .text-card{
+    text-align: center;
+    margin: auto;
+    background-color: #eaeaea;
+    padding: 2rem 0;
+    margin-top: -40px;
+    border-radius: 10px;
+    font-family: "Poppins", serif;
+}
+
+#product .product-content .card .text-card p{
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+#product .product-content .card .text-card a{
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 20px;
+    background-color: #000;
+    font-size: 20px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+#product .product-content .card .text-card a:hover{
+    background-color: #0c67de;
+    color: #000;
+    font-size: 20px;
+}
+
+/* End product */
+
+/* start about */
+#about{
+    max-width: 1100px;
+    margin: auto;
+    padding: 6rem 0;
+    background-color: #eaeaea;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    column-gap: 18rem;
+}
+
+#about h1{
+    text-align: center;
+    color: #0c67de;
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+#about p{
+    color: #333;
+    margin-left: 30px;
+    line-height: 1.4;
+    font-size: 18px;
+}
+
+#about img{
+    width: 300px;
+}
+/* end about */
+
+/* start contact*/
+#contact{
+    padding: 6rem 0;
+    background-color: #2e89ff;
+    max-width: 1100px;
+    margin: auto;
+}
+
+#contact .container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    column-gap: 10rem;
+}
+
+#contact h1{
+    color: #fff;
+    text-align: center;
+    margin-bottom: 100px;
+    font-family: "Parkinsans", sans-serif;
+    text-transform: uppercase;
+}
+
+#contact .container .inputs{
+    margin-left: 70px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+input{
+    width: 300px;
+    height: 30px;
+    padding: 5px 0;
+    outline: none;
+    border: 1px solid #fff;
+    background-color: #5ca2ffc4;
+    color: #fff;
+}
+
+::placeholder{
+    color: #fff;
+    padding: 5px ;
+}
+
+input[type='email']{
+    margin: 10px 0;
+}
+input[type='text']{
+    margin: 10px 0;
+}
+.btn{
+    background-color: #004297;
+    display: block;
+    border: none;
+    margin-top: 15px;
+    padding: 5px 10px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+textarea{
+    background-color: #5ca2ffc4;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #fff;
+    outline: none;
+}
+
+.btn:hover{
+    border: 1px solid #fff;
+    background: transparent;
+}
+
+
+#contact .container .text{
+    color: #fff;
+    margin-bottom: 80px;
+    margin-left: 70px;
+}
+
+#contact .container .text h3{
+    font-family: "Parkinsans", sans-serif;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+#contact .container .text i{
+    margin-bottom: 20px;
+    color: #002657;
+}
+
+#contact .container .text p{
+    font-size: 18px;
+}
+
+/* End contact*/
+
+/* Mobile Responsive */
+
+@media (max-width:528px){
+    .landing-page{
+        background-image: url(iamages/1.jpg);
+        background-position: center;
+    }
+    .header-landing .logo{
+        font-size: 20px;
+    }
+    .header-landing{
+        text-align: center;
+        height: 40px;
+    }
+    .header-landing ul a{
+        display: none;
+    }
+    .text-landing h1{
+        font-size: 20px;
+    }
+    .text-landing p{
+        font-size: 18px;
+        width: 350px;
+    }
+    #about p{
+        font-size: 15px;
+        width: 300px;
+    } 
+    #about{
+        display: block;
+        padding: 3rem 0;
+        height: 450px;
+    }
+    #about .container h1{}
+    #about img{
+        width: 200px;
+        margin-top: 180px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #contact .container{
+        display: block;
+    }
+    #contact .container h3{
+        font-family: "Open Sans", sans-serif;
+    }
+    #contact .container .inputs{
+        margin-left: 30px;
+    }
+    #contact .container .text{
+        margin-left: 30px;
+        margin-top: 20px;
+    }
+    #contact .container .text p{
+        margin-bottom: 20px;
+    }
+}
